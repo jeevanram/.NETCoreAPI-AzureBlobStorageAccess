@@ -44,5 +44,10 @@ namespace Services.ResourceManager.AccessLayer.Azure
         {
             await _blobStorage.Rm(filePath);
         }
+
+        public async Task RenameFile(string path,string newPath)
+        {
+            await _blobStorage.Ren(new IOPath(path), new IOPath(newPath));
+        }
     }
 }

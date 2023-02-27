@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http.Headers;
 using System.Net.Mail;
 using Services.ResourceManager.AccessLayer;
+using Services.ResourceManager.DTO;
 
 namespace Services.ResourceManager.Controllers
 {
@@ -61,6 +62,13 @@ namespace Services.ResourceManager.Controllers
         public async Task DeleteFileAsync([FromBody]string path)
         {
             await _storageManager.DeleteFileAsync(path);
+        }
+
+        [HttpPost("RenameFile")]
+        public async Task RenameFileAsync([FromBody] RenameRequest renameRequest)
+        {
+            if(renameRequest.Path != null && renameRequest.NewPath != null)
+                await _storageManager.RenameFile(renameRequest.Path, renameRequest.NewPath);
         }
     }
 }
