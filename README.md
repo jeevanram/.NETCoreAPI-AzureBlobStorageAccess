@@ -1,5 +1,7 @@
 # .NETCoreAPI-AzureBlobStorageAccess
 .NET Core APIs to access Azure Blob Storage using Stowage dotnet library
 
-Reference : https://github.com/aloneguid/stowage
+References : 
+https://github.com/aloneguid/stowage
+https://azure.microsoft.com/en-us/products/storage/blobs
 
